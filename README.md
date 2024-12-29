@@ -46,30 +46,16 @@ Procedure
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 ```
-module t_ff_ (t, clk, rst, q);
-
-  input t, clk, rst;
-  
+module d_ff(d, clk, rst, q);
+  input d, clk, rst;
   output reg q;
 
-  always @(posedge clk or posedge rst) 
-  
-begin
-
+  always @(negedge clk or posedge rst) begin
     if (rst)
-    
       q <= 0; // Reset the flip-flop
-      
-    else if (t==0)
-    
-      q <= q; 
-      
-     else
-     
-        q<=~q;
-        
-  end
-  
+    else
+      q <= d; // D input is passed to Q on the negative clock edge
+  end
 endmodule
 ```
 
@@ -81,11 +67,11 @@ RegisterNumber:24001306
 */
 
 **RTL LOGIC FOR FLIPFLOPS**
-![WhatsApp Image 2024-12-13 at 19 27 39_ea2f80ac](https://github.com/user-attachments/assets/23d6d593-8b22-41e7-9919-8a324881e1e5)
+![WhatsApp Image 2024-12-29 at 17 29 32_858fc2c3](https://github.com/user-attachments/assets/999c863e-1de0-4fcc-82b6-fd6f98da4016)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![WhatsApp Image 2024-12-13 at 19 27 40_82b7f37e](https://github.com/user-attachments/assets/209a936f-2d19-4806-9dfb-8a9d7a6438d2)
+![WhatsApp Image 2024-12-29 at 17 29 32_a2cc5eb3](https://github.com/user-attachments/assets/2b726ccc-193c-42a7-9311-c855f90b3788)
 
 
 **RESULTS**
